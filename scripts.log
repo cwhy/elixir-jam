@@ -1,0 +1,14 @@
+# not working
+# mix escript.install hex livebook
+# PATH=$PATH:/home/owner/.mix/escripts
+
+git clone https://github.com/livebook-dev/livebook.git
+cd livebook
+# the master version requires a very new elixir
+git checkout tags/v0.3.2
+
+mix deps.get --only prod
+
+# Run the Livebook server
+MIX_ENV=prod mix phx.server
+
